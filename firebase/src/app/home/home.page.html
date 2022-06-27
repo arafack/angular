@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/create']">
+        <ion-icon name="add" >    </ion-icon>
+      </ion-button>
+    </ion-buttons>
+     <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let song of songList | async " routerLink="/detalle/{{song.id}}">
+    <ion-card-header>
+    {{song.songName}}
+    </ion-card-header>
+    <ion-card-content>
+    Nombre del artista: {{song.artistName}}
+    Id: {{song.id}}
+    </ion-card-content>
+    </ion-card>
+ </ion-content>
